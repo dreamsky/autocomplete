@@ -1,0 +1,94 @@
+/*
+ * @name: Flex box style
+ * @detail: Flex box style
+ * @author: Hongbo Li
+ * @create: 2012/01/31
+ * @update: 2012/05/04
+ */
+
+/* Input textbox - do not specify a width here, it will be overwritten */
+.ffb-input 
+{
+	float:left;
+	color:#000; /* must specify along with watermark color */
+	height:16px; /* required for webkit browsers (Safari, Chrome) */
+}
+/* Color of watermark, if present */
+.ffb-input.watermark { /* added and removed dynamically */
+	color:#888; /* must specify along with input color */
+}
+/* Drop-down arrow, with sprited image */
+.ffb-arrow 
+{
+	float:left;
+	width:17px;
+	height:22px;
+	background-image:url(../img/sel_win7.gif);
+}
+.ffb-arrow.out { /* css sprite technique */
+	background-position:0;
+}
+.ffb-arrow.over { /* css sprite technique */
+	background-position:-17px 0;
+}
+.ffb-arrow.active { /* css sprite technique */
+	background-position:-34px 0;
+}
+.ffb-no-results 
+{
+	padding:2px;
+	color:red;
+}
+/* Container for dropdown contents */
+.container {
+	position:absolute; 
+	overflow:hidden;
+	margin-top:8px;
+	padding-left:6px;
+}
+/* Inner div for dropdown */
+.container .content {
+	overflow:hidden;
+	margin:5px !important;
+}
+.container .content .row {
+	color:#000;
+	height:20px;
+}
+.ffb-sel {
+	cursor:pointer;
+	color:#fff !important;
+	background-color:#39f;
+}
+.ffb-match {
+	font-weight:bold;
+	color:#000;
+}
+
+/* Paging */
+.container .paging {
+	vertical-align:middle;
+	margin:15px 0 0 10px;
+}
+.container .page, .ffb a.page {
+	font-size:85%;
+	padding:2px;
+	border:solid 1px #339;
+	background-color:#eef;
+	margin:2px;
+}
+.container .box {
+	width:22px;
+	margin:2px;
+	height:20px;
+	text-align:center;
+}
+.container .summary {
+	font-size:12px;
+	display:inline-block;
+	margin-top:-12px
+}
+
+.phone-item{
+	margin:0 5px 5px 5px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Autocomplete With Paging</title>
+<link type="text/css" rel="stylesheet" href="ui.flexbox.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery.flexbox.js"></script>
+<script>
+$(function(){
+
+var phones = {};
+phones.results = [
+	{id:001,name:'abc'},
+	{id:002,name:'abd'},
+	{id:001,name:'acd'},
+	{id:001,name:'ace'}
+];
+phones.total = phones.results.length;
+	
+	$("#demo").flexbox(phones, {
+		displayValue: "name",
+		resultsProperty:"results",
+		totalProperty:"total",
+		noResultsText: "未找到匹配的结果！",
+		resultTemplate: '<div val="id">{name}</div><br/>',  
+		minChars: 0,
+		showArrow: false,
+		//defaultQuery: true,
+		width: 236,
+		prmNames:{
+			q:"mobile",
+			p:"pageNum",
+			s:"pageSize"
+		},
+		paging: {  
+			style: 'input',             // or 'links'  
+			cssClass: 'paging',         // prefix with containerClass (e.g. .ffb .paging)  
+			pageSize: 2,               // acts as a threshold.  if <= pageSize results, paging doesn't appear  
+			showSummary: true,          // whether to show 'displaying 1-10 of 200 results' text  
+			summaryClass: 'summary',    // class for 'displaying 1-10 of 200 results', prefix with containerClass  
+			summaryTemplate: '搜索到{total}条匹配记录，共{pages}页 ', // can use {page} and {pages} as well  
+			maxPageLinks: 5             // used only if style is 'links'  
+		},
+		//enableSelAll: true,
+		selCallback: function(){
+			// TODO
+		},
+		onShowComplete: function(){
+			// TODO
+		},
+		onSelect: function(event){
+			//TODO
+		}
+	});  
+
+
+
+});
+</script>
+</head>
+<body>
+<div id="list">
+	<div id="demo" style="width:100;height:30px"></div>
+</div>
+</body>
+</html>
